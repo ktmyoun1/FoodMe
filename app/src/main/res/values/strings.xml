@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">FoodMe</string>
-    <string name="hello_world">Welcome to FoodMe. Ready to order?</string>
+    <string name="order_menu_introduction">Welcome to FoodMe. Ready to order?</string>
     <string name="action_settings">Settings</string>
 
 </resources>

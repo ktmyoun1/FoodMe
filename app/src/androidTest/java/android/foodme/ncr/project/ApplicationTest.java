@@ -1,4 +1,4 @@
-package android.foodme.ncr.foodme;
+package android.foodme.ncr.project;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
