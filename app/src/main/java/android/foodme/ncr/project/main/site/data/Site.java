@@ -1,10 +1,9 @@
-package android.foodme.ncr.project.ui.data;
+package android.foodme.ncr.project.main.site.data;
 
 /**
  * Created by kitaemyoung on 7/24/15.
  */
-public class MenuItem {
-
+public class Site {
     private long id;
     private String name;
 
@@ -23,5 +22,4 @@ public class MenuItem {
     public void setName(String name) {
         this.name = name;
     }
-
 }

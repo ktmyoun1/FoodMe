@@ -1,9 +1,9 @@
-package android.foodme.ncr.project.ui;
+package android.foodme.ncr.project.main.menu;
 
 import android.app.Fragment;
 import android.foodme.ncr.project.R;
-import android.foodme.ncr.project.ui.adapter.MenuAdapter;
-import android.foodme.ncr.project.ui.data.MenuItem;
+import android.foodme.ncr.project.main.menu.adapter.MenuAdapter;
+import android.foodme.ncr.project.main.menu.data.MenuItem;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,22 +15,21 @@ import java.util.ArrayList;
 /**
  * Created by kitaemyoung on 7/10/15.
  */
-public class OrderMenuFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
-    public OrderMenuFragment() {
+    public MenuFragment() {
     }
 
-    public static OrderMenuFragment newInstance()
+    public static MenuFragment newInstance()
     {
-        OrderMenuFragment orderMenuFragment = new OrderMenuFragment();
-        return orderMenuFragment;
+        return new MenuFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_menu, container, false);
 
         ArrayList<MenuItem> menuItems = GetMenuItems();
         ListView menuListView = (ListView)rootView.findViewById(R.id.menu_listView_container);

@@ -1,8 +1,8 @@
-package android.foodme.ncr.project.ui.adapter;
+package android.foodme.ncr.project.main.menu.adapter;
 
 import android.content.Context;
 import android.foodme.ncr.project.R;
-import android.foodme.ncr.project.ui.data.MenuItem;
+import android.foodme.ncr.project.main.menu.data.MenuItem;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
