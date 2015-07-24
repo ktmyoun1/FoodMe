@@ -20,9 +20,9 @@ public class OrderActivity extends Activity {
 
     private void setInitialFragment() {
         FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
-        Fragment startOptionsFragment = FragmentFactory.GetFragment(FragmentNavigator.Menu, null);
-        fragmenttransaction.add(startOptionsFragment, FragmentNavigator.Menu.toString());
-        fragmenttransaction.replace(R.id.order_set_initial_fragment_container, startOptionsFragment, FragmentNavigator.Menu.toString());
+        Fragment startFragment = FragmentFactory.GetFragment(FragmentNavigator.Menu, null);
+        fragmenttransaction.add(startFragment, FragmentNavigator.Menu.toString());
+        fragmenttransaction.replace(R.id.order_set_initial_fragment_container, startFragment, FragmentNavigator.Menu.toString());
         fragmenttransaction.commit();
     }
 
