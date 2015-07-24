@@ -22,7 +22,16 @@ public class OrderActivity extends Activity {
         FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
         Fragment startFragment = FragmentFactory.GetFragment(FragmentNavigator.Site, null);
         fragmenttransaction.add(startFragment, FragmentNavigator.Site.toString());
-        fragmenttransaction.replace(R.id.order_set_initial_fragment_container, startFragment, FragmentNavigator.Site.toString());
+        fragmenttransaction.replace(R.id.order_set_initial_fragment_container, startFragment);
+        fragmenttransaction.addToBackStack(FragmentNavigator.Site.toString());
+        fragmenttransaction.commit();
+    }
+
+    public void transfer(FragmentNavigator nextPage) {
+        FragmentTransaction fragmenttransaction = getFragmentManager().beginTransaction();
+        Fragment nextFragment = FragmentFactory.GetFragment(nextPage, null);
+        fragmenttransaction.replace(R.id.order_set_initial_fragment_container, nextFragment);
+        fragmenttransaction.addToBackStack(nextPage.toString());
         fragmenttransaction.commit();
     }
 

@@ -43,9 +43,9 @@ public class SiteAdaptor extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if(convertView == null){
-            convertView = _inflater.inflate(R.layout.contact_item, null);
+            convertView = _inflater.inflate(R.layout.site_item, null);
             holder = new ViewHolder();
-            holder.siteName = (TextView) convertView.findViewById(R.id.menu_item_name);
+            holder.siteName = (TextView) convertView.findViewById(R.id.site_item_name);
 
             convertView.setTag(holder);
         } else {
