@@ -13,10 +13,14 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/menu_listView_container"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="false" />
+        android:layout_height="wrap_content"
+        android:id="@+id/menu_listView_container" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CheckOut"
+        android:id="@+id/add_cart_button"
+        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package android.foodme.ncr.project.main;
 
 import android.app.Fragment;
+import android.foodme.ncr.project.main.checkout.CheckoutFragment;
 import android.foodme.ncr.project.main.menu.MenuFragment;
 import android.foodme.ncr.project.main.site.SiteFragment;
 import android.os.Bundle;
@@ -16,6 +17,8 @@ public class FragmentFactory {
                 return SiteFragment.newInstance();
             case Menu:
                 return MenuFragment.newInstance();
+            case Checkout:
+                return CheckoutFragment.newInstance();
         }
         return null;
     }

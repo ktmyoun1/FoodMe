@@ -21,6 +21,8 @@ import java.util.ArrayList;
  */
 public class SiteFragment extends Fragment {
 
+    private ListView siteListView;
+
     public SiteFragment() {
     }
 
@@ -36,7 +38,7 @@ public class SiteFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_site, container, false);
 
         ArrayList<Site> sites = GetSites();
-        ListView siteListView = (ListView)rootView.findViewById(R.id.site_listView_container);
+        siteListView = (ListView)rootView.findViewById(R.id.site_listView_container);
         siteListView.setAdapter(new SiteAdaptor(getActivity(), sites));
         siteListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

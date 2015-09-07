@@ -6,4 +6,5 @@ package android.foodme.ncr.project.main;
 public enum FragmentNavigator {
     Site,
     Menu,
+    Checkout
 }

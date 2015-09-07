@@ -2,6 +2,7 @@ package android.foodme.ncr.project.main.menu.adapter;
 
 import android.content.Context;
 import android.foodme.ncr.project.R;
+import android.foodme.ncr.project.main.OrderActivity;
 import android.foodme.ncr.project.main.menu.data.MenuItem;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
  */
 public class MenuAdapter extends BaseAdapter{
 
-    private Context _activity;
+    private final Context _activity;
     private ArrayList<MenuItem> _menuItems;
     private LayoutInflater _inflater;
 
@@ -45,16 +46,18 @@ public class MenuAdapter extends BaseAdapter{
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
+        final ViewHolder holder;
         if(convertView == null){
             convertView = _inflater.inflate(R.layout.menu_item, null);
             holder = new ViewHolder();
-            holder.menuName = (TextView) convertView.findViewById(R.id.menu_item_name);
+            holder.menuItemName = (TextView) convertView.findViewById(R.id.menu_item_name);
+            holder.menuId = _menuItems.get(position).getId();
             holder.addToCart = (Button)  convertView.findViewById(R.id.menu_item_button_add_cart);
             holder.addToCart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(_activity, String.format("AddItem button in menu item %d is selected", v.getId()), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(_activity, String.format("AddItem button in menu item %d is selected", v.getId()), Toast.LENGTH_SHORT).show();
+                    ((OrderActivity)_activity).getCartManager().addItem(new MenuItem(holder.menuId,holder.menuItemName.getText().toString()));
                 }
             });
 
@@ -64,13 +67,14 @@ public class MenuAdapter extends BaseAdapter{
         }
 
         MenuItem itemAtPosition = _menuItems.get(position);
-        holder.menuName.setText(itemAtPosition.getName());
+        holder.menuItemName.setText(itemAtPosition.getName());
 
         return convertView;
     }
 
     static class ViewHolder{
-        TextView menuName;
+        long menuId;
+        TextView menuItemName;
         Button addToCart;
     }
 }

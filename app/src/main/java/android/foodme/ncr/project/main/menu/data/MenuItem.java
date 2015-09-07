@@ -8,6 +8,11 @@ public class MenuItem {
     private long id;
     private String name;
 
+    public MenuItem(long id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     public long getId() {
         return id;
     }
@@ -22,6 +27,16 @@ public class MenuItem {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder st = new StringBuilder();
+        st.append("ItemId: ");
+        st.append(id);
+        st.append("Item: ");
+        st.append(name);
+        return st.toString();
     }
 
 }
