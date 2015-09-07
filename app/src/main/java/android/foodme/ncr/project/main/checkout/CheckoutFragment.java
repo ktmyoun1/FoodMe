@@ -35,6 +35,7 @@ public class CheckoutFragment extends Fragment {
 
         //need to show cart items
 
+
         return rootView;
     }
 }
